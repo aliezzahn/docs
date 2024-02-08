@@ -57,6 +57,6 @@ Initially, the billing model is pre-paid, based on time of resource rental and a
 
 The request-based billing model, and **Elastic Compute Units** will be introduced in next stages of the project.
 
-### Network
+### The Network
 
 The Fluence network can be thought of as a global set of interconnected nodes, each of which runs AquaVM and Marine, capable of receiving commands for deploying and executing code locally and collaborating with other nodes as specified by the received Cloudless Function. Most of these nodes are constantly involved in economic activity: they monitor and enter into Deals, form new Subnets or adjust participation in Subnets, install applications as specified by Deals, coordinate execution and serve incoming requests. They also produce proofs of the execution and submit them as specified by proof algorithms to receive rewards.
