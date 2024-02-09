@@ -2,15 +2,26 @@
 
 ## The Protocol
 
-### Aqua
+Fluence protocol forms the network of compute resources and defines the cloudless stack to execute computations.
+
+<div style={{ textAlign: "center" }}>
+  <img
+    src="/img/fluence-functions.png"
+    alt="Fluence network overview"
+    style={{ display: "block", margin: "auto", maxWidth: "50%" }}
+  />
+  <p>Fluence network overview</p>
+</div>
+
+### Cloudless Functions, Aqua
 
 The Fluence network runs entirely on the Aqua protocol which provides secure distributed execution without centralized coordination. The Aqua name is also used for a domain specific scripting language that is compiled down to pi-calculus operations and allows the expression of deadlock-free distributed algorithms. The Aqua protocol is deploy-free: Aqua scripts are packaged into data packets and are executed as they go over the network as programmed by scripts themselves. Additionally, Aqua guarantees cryptographic security on script execution: all requests and their step by step execution are signed by participating peers, making executed scripts auditable and verifiable.
 
 Code created with Aqua we call **Cloudless Functions**, because it runs cross-cloud, cross-server, and cross-geographies. Cloudless Functions power both customer applications and the Fluence protocol itself. Service discovery, routing, load balancing, subnets initiation and operation, scaling, and fault tolerance algorithms are all run over Aqua and expressed as Cloudless Functions.
 
-### Marine
+### Compute Functions, Marine
 
-While Aqua operates the topology and flow of the execution over servers and clouds, for running computation on nodes, Fluence uses Marine, a WebAssembly runtime allowing multi-module execution, incorporating interface-types and WASI for effector access. 
+While Aqua operates the topology and flow of the execution over servers and clouds, for running computation on nodes, Fluence uses Marine, a WebAssembly runtime allowing multi-module execution, incorporating interface-types and WASI for effector access.
 
 Marine powers **Compute Functions**, that are executed within single machine similarly to serverless cloud functions. Marine supports Rust and C++ as source languages, but more languages are coming with the development of the WebAssembly standard.
 
@@ -38,18 +49,54 @@ A cryptographic proof for particular code execution on Fluence. Every function e
 
 ## The Marketplace
 
-On-chain marketplace matches compute providers with customers who pay for using the compute resources offered by providers. The marketplace is completely permissionless, so any providers may participate and publish their available capacity. 
+On-chain marketplace matches compute providers with customers who pay for using the compute resources offered by providers. The marketplace is completely permissionless, so any providers may participate and publish their available capacity.
+
+<div style={{ textAlign: "center" }}>
+  <img
+    src="/img/marketplace-providers.png"
+    alt="Compute providers on the Fluence marketplace"
+    style={{ display: "block", margin: "auto", maxWidth: "50%" }}
+  />
+  <p>Compute providers on the Fluence marketplace</p>
+</div>
+
+<div style={{ textAlign: "center" }}>
+  <img
+    src="/img/marketplace-provider-resources.png"
+    alt="Compute provider resources"
+    style={{ display: "block", margin: "auto", maxWidth: "50%" }}
+  />
+  <p>Compute provider resources</p>
+</div>
 
 ### Proof of Capacity
 Fluence ensures that resources advertized by providers exist and available by enforcing a cryptographic proof called Proof of Capacity. Providers apply their hardware resources to constantly generate Proofs of Capacity to confirm that these resources are ready to serve customers. Protocol rewards such resources with Fluence token proportionally to the allocated power.
 
 Whenever customers need computing power from chosen providers, these resources are switched from generating proofs to serving customers' application.
 
+<div style={{ textAlign: "center" }}>
+  <img
+    src="/img/marketplace-capacity.png"
+    alt="Compute units submitting Proofs of Capacity"
+    style={{ display: "block", margin: "auto", maxWidth: "50%" }}
+  />
+  <p>Compute units submitting Proofs of Capacity</p>
+</div>
+
 ### Resource Pricing
 
-Customers may select providers by price advertized and other parameters, or alternatively publish work and required max price to be picked up by any provider. 
+Customers may select providers by price advertised and other parameters, or alternatively publish work and required max price to be picked up by any provider.
 
 Under-the-hood, for every application deployment, a Deal is being created on-chain between a customer and list of providers. Deals record financial detail (prices, pre-payment, and required collaterals from providers), technical requirements related to required services (access to certain data, binaries or web API), and a link to code installations in the network.
+
+<div style={{ textAlign: "center" }}>
+  <img
+    src="/img/marketplace-matching.png"
+    alt="Matching criteria for selecting providers"
+    style={{ display: "block", margin: "auto", maxWidth: "50%" }}
+  />
+  <p>Matching criteria for selecting providers</p>
+</div>
 
 ### Billing model
 

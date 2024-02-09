@@ -51,8 +51,8 @@ const sidebars = {
     "learn/why-fluence",
     "learn/fluence-comparison",
     "learn/use-cases",
-    "learn/technology",
-    "learn/networks",
+    "learn/fluence-token",
+    "learn/governance",
   ],
   "aqua-book": [
     "aqua-book/introduction",
