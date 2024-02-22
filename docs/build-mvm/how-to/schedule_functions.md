@@ -1,5 +1,12 @@
 # Cloudless Scheduler
 
+## Introduction
+
+Like all serverless functions, Fluence Cloudless Functions are event-based. That is, something needs to happen in order to trigger the function. An event trigger can originate in a multitude of contexts, such as a browser click or data change in a spreadsheet. The Fluence Cloudless Scheduler implements an API for . In addition to event-based triggers, the Cloudless Scheduler can also accommodate time-based triggers, similar to cronjobs, such as time elapsed, specific dates or interval.
+
+The Cloudless Scheduler is implemented by means of *spells*: stateful, event-driven Aqua scripts with dedicated kv storage per spell and a trigger configuration defining events. The remainder of this chapter introduces the *spells* so you can Implement Cloudless Scheduler functionality, if needed by your Cloudless App.
+
+
 Tested on:
 
 - the FCLI version: `@fluencelabs/cli/0.13.5 linux-x64 node-v18.19.0`
